@@ -1,0 +1,262 @@
+1. кроссплатформерность
+2. множество вакансий
+3. Разработка под Android
+4. Много бэкэнда на Jave
+5. Безопасность
+6. ООП
+7. Многопоточность
+8.
+Устанавливаем JDK https://www.oracle.com/java/technologies/downloads
+Подгружаем в VSC необходимый для работы с JAVA пакет
+Создаём новый проект, в котором создаём файл programm.java
+Минимальная единица работы в jave это класс, поэтому набираем class и из автоматического поиска добавляем новый класс у него название будет как и название программы
+далее определяем точку входа в программы - метод main(). Набираем main и автоматически всталяем в код:
+public static void main(String[] args) {
+        
+    }
+9. Чтобы что-то напечатать в консоль необходимо набрать 
+                    System.out.println("bye world");       при этом достаточно знать снипы (сокращения) здесь сокращение sysout
+10. Чтобы запустить программу нажимаем треугольник в правом верхнем углу.
+    Второй вариант открыть в интегрированном терминале и набрать команду java programm.java
+11. Комментарии многострочные 
+/*текст
+коммен-
+тария
+*/
+Комеентарии однострочные
+//текст комментария
+12. Типы данных (бывают ссылочные (классы, массивы....) и примитивные(int, short, long, / float, double, / boolean, / char))
+13. Идентификация и инициализация переменных:
+int a = 5;
+String s = "   dfggh";
+float r = 2.7f;     // вещественная переменная c обязательным указанием f
+double pi = 3.1415; // вещественная переменная с не обязательным указанием D  3.1415D будет эквивалентно
+char p = '}'  // символьный тип данных
+boolean f = true & false;  // различают побитовые операции &  | или логические &&   ||
+
+14. СТРОКИ
+    String  msg = 'Hello world';
+15. НЕЯВНАЯ ТИПИЗАЦИЯ
+    var i = 123;   // переменной будет присвоен тип, который больше всего подходит значению
+16. Определение типа переменной методом getType()
+    необходимо сначала прописать отдельный класс, позволяющий определять тип переменной 
+    static String getType(Object o){
+        return o.getClass().getSimpleName();
+    }
+
+17. Классы обертки
+    int     Integer
+    string  String
+    float   Float
+    double  Double
+    short   Short
+    long    Long
+    byte    Byte
+    char    Character
+    boolean Boolean
+
+    Классы-обёртки нужны для того, чтобы получить какие либо развёрнутые данные в отношении переменных соответствующих типов
+    например:    
+    int p = 6788;
+    System.out.println(Integer.MAXVALUE);
+18. Операции:
+    Присванивание: =
+    Арифметические: +,-,*,/,%,++,--
+    Операции сравнения: ==,>=,<=,!=
+    Логические операции: &&, ||, ^, !
+    Побитовые операции: &, |, ^, <<, >>
+
+    Приоритет вывода в терминал(консоль) выше, чем приоритет инкремента (декремента)
+
+    boolean x = 123>234; // в консоли должно выдать false
+
+    || - коньюнкция
+    && - дизъюнкция
+    ! - инверсия
+    ^ - разделительная дизъюнкция
+------------побитовые операции ------------------
+// побитовые операции------------------------
+    int c = 5;
+    int d = 7;
+    System.out.println(c | d); // числа представляются в двоичной записи и каждый разряд побитово применяет логическое или, далле перевод в десятичное представление
+    System.out.println(c & d); // тоже самое, только применяется побитовое 'И'
+    System.out.println(c ^ d); // тоже самое, только применяется разделительное "И" (истина тогда, когда строго одно истина)
+// более сложный случай --------------
+    // коньюнкция && истина будет тогда, когда истина оба выражения и если хотя бы одно ложь, то результат ложь
+    // дизъюнкция || истина будет тогда, когда истина хотя бы одно выражение
+    String message = "34fj700";
+    boolean h = message.length() >= 10 && message.charAt(3) == 'j';
+    h = message.length() >= 10 || message.charAt(3) == 'j';
+    System.out.println(h);
+19. Массивы
+    int[] arr = new int[10]; // классическое объявление массива, по умолчанию все элементы равны 0
+    String[] crr = new String[10]; // по умолчанию все элементы равны null
+    char[] drr = new char[10]; // по умолчанию все элементы равны ' '
+    int brr[] // такое объявление массива тоже возможно
+    boolean[] frr = new boolean[10]; // по умолчанию все элементы равны false
+    System.out.println(arr.length); // длина массива
+    int[] brr = new int[] {1, 2, 3, 4}; // второй вариант задания массива
+    System.out.println(brr.length);
+    System.out.println(brr[2]); // обращение, в данном случае вывод в консоль элемента массива по второму индексу
+    arr[2] = 5;//присванивание значения в массиве по какому-то индексу
+    int[] vrr[] = new int[3][5]; // объявление двумерного массива с 3 строками и 5 столбцами
+    int[][] mrr; //объявление массива массивов(несколько отличается от двумерного)
+    // распечатывание массива массивов
+    int[][] arr = new int[3][5];
+       
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                System.out.printf("%d ", arr[i][j]);
+            }
+20.// преобразования
+    int i = 123; double d = i; // неявное преобразование int в double
+    System.out.println(i);  // 123
+    System.out.println(d);  // 123.0
+    d = 3.1415; i = (int)d; // явное преобразование к типу int
+    System.out.println(d);  // 3.1415
+    System.out.println(i);  // 3
+    d = 3.9415; i = (int)d;
+    System.out.println(d);  // 3.9415
+    System.out.println(i);  // 3
+    byte b = Byte.parseByte("123"); // явное преобразование к типу byte, используя класс-обёртку Byte.
+    System.out.println(b);  // 123
+    b = Byte.parseByte("1234");
+    System.out.println(b);  // NumberFormatException: Value out of range
+    // в двух строчках ниже отображено, что в массив с типом double нельзя положить массив типа int
+    int[] a = new int[10];
+    double[] d = a;   // ИЗУЧАЕМ ковариантность и контравариантность
+21. Получение данных из терминала
+
+//получение данных из терминала
+import java.util.Scanner; //сначала импортируем java.util.Scanner
+public class programm {
+   public static void main(String[] args) {
+       Scanner iScanner = new Scanner(System.in); //создаём экземпляр класса Scanner и в качестве аргумента указываем System.in, откуда будем забирать данные
+       System.out.printf("name: "); //можем выводить на экран (только вместо println используем printf )
+       String name = iScanner.nextLine(); // определяем тип вводимых данных и название переменной, в кот с помощью метода nextLine, применяемого к нашему экземпляру класса Scanner ожидаем ввод строки
+       System.out.printf("Привет, %s!", name);
+       iScanner.close(); // закрываем наш объект
+   }
+}
+// ввод в консоль типа int, типа double
+import java.util.Scanner;
+public class programm {
+    public static void main(String[] args) {
+        Scanner iScanner = new Scanner(System.in);
+        System.out.printf("int a: "); // печатаем себе подсказку в консоль, что ожидаем ввода целых чисел
+        int x = iScanner.nextInt(); // определяем переменную типа int, в которую методом nextInt будем вводить данные
+        System.out.printf("double a: "); // печатаем себе подсказку в консоль, что ожидаем ввода  чисел типа double
+        double y = iScanner.nextDouble(); // определяем переменную типа double, в которую методом nextDouble будем вводить данные
+        System.out.printf("%d + %f = %f", x, y, x + y);
+        iScanner.close();
+}}
+
+// проверка вводимых данных на соответствие вводимого типа
+import java.util.Scanner;
+public class programm {
+   public static void main(String[] args) {
+       Scanner iScanner = new Scanner(System.in);
+       System.out.printf("int a: ");
+       boolean flag = iScanner.hasNextInt(); //позволяет проверить истинно или ложно, что введенные данные типа int
+       System.out.println(flag); // выводит в консоль или true или false     
+       int i = iScanner.nextInt(); // кладёт в переменную i  данные которые мы вводили для проверки соответствия типу
+       System.out.println(i);       
+       iScanner.close();
+   } }
+
+22. Форматирование строк
+// форматированный вывод, пример конкактенации строк - её надо избегать, забирает много памяти 
+public class programm {
+    public static void main(String[] args) {
+    int a = 5;
+    String b = "qwer";
+    String c = a + b;
+    System.out.println(c);
+
+    }
+}
+
+public class programm {
+    public static void main(String[] args) {
+        int a = 1, b = 2;
+        int c = a + b;
+        String res = String.format("%d + %d = %d \n", a, b, c); //если форматированную строку придется дальше сипользовать то применяют метод String.format
+        System.out.printf("%d + %d = %d \n", a, b, c); //если форматированную строку только выводят в консоль, то применяют обычный синтаксис
+        System.out.println(res);
+    }
+}
+// виды спецификаторов
+%d: целочисленных значений
+%x: для вывода шестнадцатеричных чисел
+%f: для вывода чисел с плавающей точкой
+%e: для вывода чисел в экспоненциальной форме, 
+например, 3.1415e+01
+%c: для вывода одиночного символа
+%s: для вывода строковых значений
+
+23. Область видимости переменных
+У переменных существует понятие «область видимости». 
+Если переменную объявили внутри некоторого блока фигурных скобок { }, 
+то снаружи этого блока переменная будет недоступна.
+
+public class Program {
+   public static void main(String[] args) {
+       {
+           int i = 123;
+           System.out.println(i);           
+       }     
+       System.out.println(i);  // error: cannot find symbol
+   }
+}
+24. Функции и методы
+
+public class Program {
+    static void sayHi() {
+        System.out.println("hi!");
+    }
+    static int sum(int a, int b) {
+        return a+b;
+    }  
+    static double factor(int n) {
+        if(n==1)return 1;
+        return n * factor(n-1);
+    }
+    public static void main(String[] args) {
+        sayHi(); // hi!
+        System.out.println(sum(1, 3)); // 4
+        System.out.println(factor(5)); // 120.0
+25. Условный оператор
+public class Program {
+    public static void main(String[] args) {
+        int a = 1;
+        int b = 2;
+        int c;
+        if (a > b) {
+            c = a;
+        } else {
+            c = b;
+        }
+        System.out.println(c);
+    }
+}
+// если операции после условия в одну строку то можно без скобок
+public class Program {
+    public static void main(String[] args) {
+        int a = 1;
+        int b = 2;
+        int c = 0;
+        if (a > b) c = a;
+        if (b > a) c = b;
+
+        System.out.println(c);
+    }
+}
+// тернарный оператор
+public class Program {
+    public static void main(String[] args) {
+        int a = 1;
+        int b = 2;
+        int min = a < b ? a : b; //если выполняется условие, то возвращается значение a, если нет возвращается значение b
+        System.out.println(min);
+
+
