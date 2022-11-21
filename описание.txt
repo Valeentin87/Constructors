@@ -259,4 +259,28 @@ public class Program {
         int min = a < b ? a : b; //если выполняется условие, то возвращается значение a, если нет возвращается значение b
         System.out.println(min);
 
+26. Операторы выбора
+
+import java.util.Scanner;
+public class Program {
+    public static void main(String[] args) {
+        int mounth = value;
+        String text = "";
+        switch (mounth) {  // в зависимости рот того, какое значение будет принимать переменная mounth (значения указаны
+        //после слов case, при этом каждый блок case должен заканчиваться конструкцией break
+            case 1:
+                text = "Autumn";
+                break;
+		...
+            default:   // необязательный блок, который описывает порядок действий в том случае, если переменная не
+            // приняла ни одно из значений
+                text = "mistake";
+                break;
+        }
+        System.out.println(text);
+        iScanner.close();
+    }
+}
+
+
 
