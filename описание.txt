@@ -281,6 +281,97 @@ public class Program {
         iScanner.close();
     }
 }
+// причём если нам необходимо сделать для различных условий одно и тоже действие, то можно прописывать вот так:
+switch (name) {
+    case 1:
+    case 2:
+    case 'Mark':
+    case 0,567:
+        name = name+2;
+        break
+
+}
+
+27. Циклы.
+
+Цикл — это многократное выполнение одинаковой последовательности действий.
+
+В java доступны следующие циклы:
+цикл while;
+цикл do while;
+цикл for; и его модификация for in
+// ------------цикл while----------------
+public class Program {
+    public static void main(String[] args) {
+        int value = 321;
+        int count = 0;
+
+        while (value != 0) {
+            value /= 10;
+            count++;
+        }
+        System.out.println(count);
+    }
+}
+// ----------цикл do while----сначала выполняется тело цикла, а после этого уже проверяется условие.
+public class Program {
+    public static void main(String[] args) {
+        int value = 321;
+        int count = 0;
+
+        do {
+            value /= 10;
+            count++;
+        } while (value != 0);
+        System.out.println(count);
+    }
+}
+//continue, break
+  Операторы для управления циклами — continue и break.
+  Выполнение следующей итерации цикла — continue.
+  Прерывание текущей итерации цикла — break.
+  * ближайшего к оператору
+// цикл for ----------------------------
+public class Program {
+    public static void main(String[] args) {
+
+        int s = 0;
+        for (int i = 1; i <= 10; i++) {
+            s += i;
+        }
+        System.out.println(s);
+    }
+}
+// вложенные циклы ----------------------
+public class Program {
+    public static void main(String[] args) {
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+        // * * * * *
+        // * * * * *
+        // * * * * *
+        // * * * * *
+        // * * * * *
+    }
+}
+// циклы for in --------------------------
+public class Program {
+    public static void main(String[] args) {
+
+        int arr[] = new int[10];
+        for (int item : arr) {  // действия, описанные в теле цикла будут проведены с каждым элементом итерируемой
+        // коллекции
+            System.out.printf("%d ", item);
+        }
+        System.out.println();
+    }
+}
+28. Работа с файлами
+
 
 
 
